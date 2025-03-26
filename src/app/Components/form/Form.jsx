@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const AppoinForm = () => {
+const Form= () => {
     const [selectedDoctor, setSelectedDoctor] = useState("");
 
     const handleSubmit = (e) => {
@@ -10,26 +10,26 @@ const AppoinForm = () => {
     };
 
     return (
-        <div className="mx-auto w-[80%] mt-24 bg-gray-100">
+        <div className="mx-auto w-[80%] my-24 bg-gray-100">
             <div className="flex flex-col md:flex-row  md:justify-between items-center w-full bg-base-100 shadow-2xl p-6">
                 {/* Office Time Section */}
                 <div className="w-full md:w-[30%] p-5">
                     <h1 className="font-bold text-4xl">Office Time</h1>
-                    <div className="flex flex-col">
-                        <h2>Address</h2>
-                        <p>8863 North Deerfield Street Bronx, NY 104609</p>
-                    <h2>Office Hours</h2>
-                    <ul>
+                    <div className="flex flex-col mt-4">
+                        <h2 className="font-semibold text-lg">Address</h2>
+                        <p className="text-gray-400">8863 North Deerfield Street Bronx, NY 104609</p>
+                    <h2 className="font-semibold text-lg">Office Hours</h2>
+                    <ul className="text-gray-400">
                         <li>Monday - Friday: 9:00 AM - 5:00 PM</li>
                         <li>Saturday: 10:00 AM - 2:00 PM</li>
-                        <li>Sunday: Closed</li>
+                        <li >Sunday: Closed</li>
                     </ul>
 
                 </div>
                 <div className="flex flex-col">
-                        <h2>Work Times</h2>
+                        <h2 className="font-semibold text-lg">Work Times</h2>
                        
-                    <ul>
+                    <ul className="text-gray-400">
                         <li>+7 10 34 7892 34
                         </li>
                         <li>+7 10 24 1344 54</li>
@@ -47,24 +47,24 @@ const AppoinForm = () => {
                             <div className="flex justify-between gap-4 items-center w-full">
                                 <div className="flex flex-col w-1/2">
                                     <label className="label">
-                                        <span className="label-text">Name</span>
+                                        <span className="label-text font-bold">Name</span>
                                     </label>
                                     <input
                                         type="text"
                                         placeholder="Enter your name"
-                                        className="bg-[#CFFDE0] input input-bordered w-full"
+                                        className="bg-[#F0FFF5] input input-bordered w-full"
                                         required
                                     />
                                 </div>
 
                                 <div className="flex flex-col w-1/2">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text font-bold">Email</span>
                                     </label>
                                     <input
                                         type="email"
                                         placeholder="Enter your email"
-                                        className="input input-bordered w-full"
+                                        className="bg-[#F0FFF5] input input-bordered w-full"
                                         required
                                     />
                                 </div>
@@ -76,22 +76,22 @@ const AppoinForm = () => {
                             <div className="flex justify-between gap-4 items-center w-full">
                                 <div className="flex flex-col w-1/2">
                                     <label className="label">
-                                        <span className="label-text">Phone</span>
+                                        <span className="label-text font-bold">Phone</span>
                                     </label>
                                     <input
                                         type="tel"
                                         placeholder="Enter your phone"
-                                        className="input input-bordered w-full"
+                                        className="bg-[#F0FFF5] input input-bordered w-full"
                                         required
                                     />
                                 </div>
 
                                 <div className="flex flex-col w-1/2">
                                     <label className="label">
-                                        <span className="label-text">Select Doctor</span>
+                                        <span className="label-text font-bold">Select Doctor</span>
                                     </label>
                                     <select
-                                        className="select select-bordered w-full"
+                                        className="bg-[#F0FFF5] select select-bordered w-full"
                                       
                                         required
                                     >
@@ -107,10 +107,10 @@ const AppoinForm = () => {
                         </div>
                         <div className="form-control mb-4">
                             <label className="label">
-                                <span className="label-text">Additional Comments</span>
+                                <span className=" label-text font-bold">Additional Comments</span>
                             </label>
                             <textarea
-                                className="textarea textarea-bordered w-full"
+                                className=" bg-[#F0FFF5] textarea textarea-bordered w-full"
                                 placeholder="Write any concerns or details here..."
                                 value=""
                                
@@ -130,4 +130,4 @@ const AppoinForm = () => {
     );
 };
 
-export default AppoinForm;
+export default Form;

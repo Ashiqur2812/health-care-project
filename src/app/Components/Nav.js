@@ -1,6 +1,6 @@
 import React from 'react';
-import AppoinForm from './AppoinForm';
-// import Banner from './Banner';
+
+
 
 const Nav = () => {
     return (
@@ -49,7 +49,7 @@ const Nav = () => {
     <a className="btn bg-[#A1EEBD] ">Sign Up</a>
   </div>
 </div>
-<AppoinForm/>
+
         </div>
     );
 };
