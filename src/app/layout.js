@@ -25,9 +25,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Banner></Banner>
-        <div className="h-screen h-max-[600px]">{children}</div>
-
+        {/* <Banner></Banner> */}
+        <div className="">{children}</div>
         <Footer></Footer>
       </body>
     </html>

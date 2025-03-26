@@ -1,4 +1,3 @@
-'use client';
 
 const ScheduleSection = () => {
   const schedules = [
@@ -32,7 +31,7 @@ const ScheduleSection = () => {
   ];
 
   return (
-    <section className="-mt-20 ">
+    <div className="-mt-20 relative z-10 bg-transparent">
       <div className="container mx-auto px-6 lg:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {schedules.map((schedule) => (
@@ -66,7 +65,7 @@ const ScheduleSection = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
