@@ -3,7 +3,6 @@ import "./globals.css";
 import Footer from "./components/footer";
 import Nav from "./components/Nav";
 
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
