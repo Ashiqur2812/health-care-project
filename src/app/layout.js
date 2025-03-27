@@ -27,7 +27,6 @@ export default function RootLayout({ children }) {
       >
         <Banner></Banner>
         <div className="h-screen h-max-[600px]">{children}</div>
-
         <Footer></Footer>
       </body>
     </html>
