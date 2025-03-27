@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import ScheduleSection from "../schedules/page";
 
 const Banner = () => {
   const slides = [
@@ -60,9 +59,6 @@ const Banner = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="-mt-10 relative z-10">
-        <ScheduleSection />
-      </div>
     </div>
   );
 };
