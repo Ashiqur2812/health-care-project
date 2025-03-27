@@ -14,7 +14,7 @@ const Banner = () => {
   ];
 
   return (
-    <div className="slider relative w-full h-[600px]">
+    <div className="slider relative w-full my-24">
       <Swiper
         modules={[Navigation, Autoplay]}
         navigation
