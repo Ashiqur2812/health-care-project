@@ -27,7 +27,7 @@ const AddDoctors = () => {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white py-10">
       <div className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
         <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">
           Add Doctor
@@ -119,15 +119,22 @@ const AddDoctors = () => {
             >
               Specialization
             </label>
-            <input
-              type="text"
+            <select
               name="category"
               id="category"
-              placeholder="Specialization"
               value={doctor.category}
               onChange={handleChange}
-              className="w-full p-2 border rounded  bg-white text-gray-800"
-            />
+              className="w-full p-2 border rounded bg-white text-gray-800"
+            >
+              <option value="">Select Specialization</option>
+              <option value="Medicine">Medicine</option>
+              <option value="Cardiologist">Cardiologist</option>
+              <option value="Dermatologist">Dermatologist</option>
+              <option value="Neurologist">Neurologist</option>
+              <option value="Pediatrician">Pediatrician</option>
+              <option value="Orthopedic">Orthopedic</option>
+              <option value="Psychiatrist">Psychiatrist</option>
+            </select>
           </div>
 
           <div>
