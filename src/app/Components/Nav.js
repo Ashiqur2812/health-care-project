@@ -1,3 +1,4 @@
+
 "use client"
 import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
@@ -60,6 +61,11 @@ const Nav = () => {
           ) : (
             <SignInButton />
           )} */}
+
+
+        <div className="navbar-end">
+          <a className="btn bg-[#A1EEBD] ">Sign Up</a>
+
         </div>
       </div>
     </div>
