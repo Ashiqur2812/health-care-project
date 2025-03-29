@@ -16,12 +16,6 @@ const AddDoctors = () => {
     hour: "",
   });
 
-  //   const handleChange = (e) => {
-  //     console.log(e);
-  //     const { name, value } = e.target;
-  //     setDoctor({ ...doctor, [name]: value });
-  //   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Doctor Data:", doctor);
