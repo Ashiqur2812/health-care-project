@@ -1,12 +1,15 @@
 "use client";
 import { useParams } from 'next/navigation';
 import React from 'react';
-
+import { PiGraduationCap } from "react-icons/pi";
+import { FaCircle, FaRegCircle } from "react-icons/fa";
+import { FcGraduationCap } from "react-icons/fc";
 const Page = () => {
     const params = useParams(); // Get dynamic ID from the URL
     console.log(params); // Debugging: Check if params are working
 
     return (
+        <div>
         <div className="bg-blue-100 flex justify-between items-center p-10">
             {/* Corrected Image URL */}
             <img 
@@ -26,6 +29,20 @@ const Page = () => {
                     Doctor ID: {params.id} {/* Displaying dynamic ID */}
                 </p>
             </div>
+        </div>
+        <div className='w-1/2 mx-auto '>
+        <div className='w-[200%]'>
+
+            <FcGraduationCap size={40} className="text-blue-500" />
+            </div>
+            <h1 className='flex justify-start items-center'> <FaCircle /> University of California, San Francisco.<br/>Medical degree</h1>
+                 <p className='flex justify-start items-center'> <FaCircle className='text-blue-500'/> University of California, Los Angeles (UCLA) Medical Center.<br/>Completed residency training in psychiatry</p>
+<p className='flex justify-start items-center'> <FaCircle />University of California, Berkeley.
+
+Master of Public Health degree
+
+</p>
+        </div>
         </div>
     );
 };

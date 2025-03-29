@@ -32,7 +32,7 @@ const Nav = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
               <li><Link href="/">HOME</Link></li>
               <li><Link href="/about">ABOUT</Link></li>
-              <li><a href="#">BLOGS</a></li>
+              <li><Link href="/blog">BLOG</Link></li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">NORDIS</a>
@@ -42,7 +42,7 @@ const Nav = () => {
           <ul className="menu menu-horizontal px-1">
             <li><Link href="/">HOME</Link></li>
             <li><Link href="/about">ABOUT</Link></li>
-            <li><a href="#">BLOGS</a></li>
+           <li><Link href="/blog">BLOG</Link></li>
           </ul>
         </div>
 
