@@ -16,10 +16,11 @@ const AddDoctors = () => {
     hour: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setDoctor({ ...doctor, [name]: value });
-  };
+  //   const handleChange = (e) => {
+  //     console.log(e);
+  //     const { name, value } = e.target;
+  //     setDoctor({ ...doctor, [name]: value });
+  //   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,7 +29,7 @@ const AddDoctors = () => {
 
   return (
     <div className="bg-white py-10">
-      <div className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+      <div className="max-w-3xl mx-auto p-6 bg-white shadow rounded-lg mt-10">
         <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">
           Add Doctor
         </h2>
@@ -43,7 +44,7 @@ const AddDoctors = () => {
               id="name"
               placeholder="Doctor's Name"
               value={doctor.name}
-              onChange={handleChange}
+              onChange={(e) => setDoctor({ ...doctor, name: e.target.value })}
               className="w-full p-2 border rounded bg-white text-gray-800"
             />
           </div>
@@ -60,7 +61,9 @@ const AddDoctors = () => {
               id="descriptions"
               placeholder="Description"
               value={doctor.descriptions}
-              onChange={handleChange}
+              onChange={(e) =>
+                setDoctor({ ...doctor, descriptions: e.target.value })
+              }
               className="w-full p-2 border rounded bg-white text-gray-800"
             ></textarea>
           </div>
@@ -75,7 +78,7 @@ const AddDoctors = () => {
               id="image"
               placeholder="Image URL"
               value={doctor.image}
-              onChange={handleChange}
+              onChange={(e) => setDoctor({ ...doctor, image: e.target.value })}
               className="w-full p-2 border rounded  bg-white text-gray-800"
             />
           </div>
@@ -90,7 +93,7 @@ const AddDoctors = () => {
               id="degree"
               placeholder="Degrees (comma separated)"
               value={doctor.degree}
-              onChange={handleChange}
+              onChange={(e) => setDoctor({ ...doctor, degree: e.target.value })}
               className="w-full p-2 border rounded  bg-white text-gray-800"
             />
           </div>
@@ -107,7 +110,9 @@ const AddDoctors = () => {
               id="experience"
               placeholder="Experience (comma separated)"
               value={doctor.experience}
-              onChange={handleChange}
+              onChange={(e) =>
+                setDoctor({ ...doctor, experience: e.target.value })
+              }
               className="w-full p-2 border rounded  bg-white text-gray-800"
             ></textarea>
           </div>
@@ -123,7 +128,9 @@ const AddDoctors = () => {
               name="category"
               id="category"
               value={doctor.category}
-              onChange={handleChange}
+              onChange={(e) =>
+                setDoctor({ ...doctor, category: e.target.value })
+              }
               className="w-full p-2 border rounded bg-white text-gray-800"
             >
               <option value="">Select Specialization</option>
@@ -147,7 +154,7 @@ const AddDoctors = () => {
               id="email"
               placeholder="Email"
               value={doctor.email}
-              onChange={handleChange}
+              onChange={(e) => setDoctor({ ...doctor, email: e.target.value })}
               className="w-full p-2 border rounded  bg-white text-gray-800"
             />
           </div>
@@ -165,7 +172,9 @@ const AddDoctors = () => {
               id="phoneNumber"
               placeholder="Phone Number"
               value={doctor.phoneNumber}
-              onChange={handleChange}
+              onChange={(e) =>
+                setDoctor({ ...doctor, phoneNumber: e.target.value })
+              }
               className="w-full p-2 border rounded  bg-white text-gray-800"
             />
           </div>
@@ -174,15 +183,22 @@ const AddDoctors = () => {
             <label htmlFor="day" className="block font-medium text-gray-700">
               Available Day
             </label>
-            <input
-              type="text"
+            <select
               name="day"
               id="day"
-              placeholder="Available Day"
               value={doctor.day}
-              onChange={handleChange}
-              className="w-full p-2 border rounded  bg-white text-gray-800"
-            />
+              onChange={(e) => setDoctor({ ...doctor, day: e.target.value })}
+              className="w-full p-2 border rounded bg-white text-gray-800"
+            >
+              <option value="">Select a Day</option>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
           </div>
 
           <div>
@@ -195,7 +211,7 @@ const AddDoctors = () => {
               id="hour"
               placeholder="Available Hours"
               value={doctor.hour}
-              onChange={handleChange}
+              onChange={(e) => setDoctor({ ...doctor, hour: e.target.value })}
               className="w-full p-2 border rounded  bg-white text-gray-800"
             />
           </div>
