@@ -18,19 +18,36 @@ const AddDoctors = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Doctor Data:", doctor);
+    const degree = doctor.degree.split(",");
+    const experience = doctor.experience.split(",");
+    const doctorsData = {
+      name: doctor.name,
+      descriptions: doctor.descriptions,
+      image: doctor.image,
+      degree,
+      experience,
+      category: doctor.category,
+      email: doctor.email,
+      phoneNumber: doctor.phoneNumber,
+      day: doctor.day,
+      hour: doctor.hour,
+    };
+    console.log(doctorsData);
   };
 
   return (
-    <div className="bg-white py-10">
+    <div className="bg-white py-12">
       <div className="max-w-3xl mx-auto p-6 bg-white shadow rounded-lg mt-10">
         <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">
           Add Doctor
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block font-medium text-gray-700">
-              Doctors Name
+            <label
+              htmlFor="name"
+              className="block font-medium text-gray-700 mb-1"
+            >
+              Doctors Name<span className="text-red-600 text-lg">*</span>
             </label>
             <input
               type="text"
@@ -46,9 +63,9 @@ const AddDoctors = () => {
           <div>
             <label
               htmlFor="descriptions"
-              className="block font-medium text-gray-700"
+              className="block font-medium text-gray-700 mb-1"
             >
-              Description
+              Description<span className="text-red-600 text-lg">*</span>
             </label>
             <textarea
               name="descriptions"
@@ -63,8 +80,11 @@ const AddDoctors = () => {
           </div>
 
           <div>
-            <label htmlFor="image" className="block font-medium text-gray-700">
-              Image URL
+            <label
+              htmlFor="image"
+              className="block font-medium text-gray-700 mb-1"
+            >
+              Image URL<span className="text-red-600 text-lg">*</span>
             </label>
             <input
               type="text"
@@ -78,9 +98,14 @@ const AddDoctors = () => {
           </div>
 
           <div>
-            <label htmlFor="degree" className="block font-medium text-gray-700">
+            <label
+              htmlFor="degree"
+              className="block font-medium text-gray-700 mb-1"
+            >
               Degrees (comma separated)
+              <span className="text-red-600 text-lg">*</span>
             </label>
+
             <input
               type="text"
               name="degree"
@@ -95,11 +120,13 @@ const AddDoctors = () => {
           <div>
             <label
               htmlFor="experience"
-              className="block font-medium text-gray-700"
+              className="block font-medium text-gray-700 mb-1"
             >
               Experience (comma separated)
+              <span className="text-red-600 text-lg">*</span>
             </label>
-            <textarea
+
+            <input
               name="experience"
               id="experience"
               placeholder="Experience (comma separated)"
@@ -108,15 +135,15 @@ const AddDoctors = () => {
                 setDoctor({ ...doctor, experience: e.target.value })
               }
               className="w-full p-2 border rounded  bg-white text-gray-800"
-            ></textarea>
+            ></input>
           </div>
 
           <div>
             <label
               htmlFor="category"
-              className="block font-medium text-gray-700"
+              className="block font-medium text-gray-700 mb-1"
             >
-              Specialization
+              Specialization<span className="text-red-600 text-lg">*</span>
             </label>
             <select
               name="category"
@@ -139,8 +166,11 @@ const AddDoctors = () => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block font-medium text-gray-700">
-              Email
+            <label
+              htmlFor="email"
+              className="block font-medium text-gray-700 mb-1"
+            >
+              Email<span className="text-red-600 text-lg">*</span>
             </label>
             <input
               type="email"
@@ -156,9 +186,9 @@ const AddDoctors = () => {
           <div>
             <label
               htmlFor="phoneNumber"
-              className="block font-medium text-gray-700"
+              className="block font-medium text-gray-700 mb-1"
             >
-              Phone Number
+              Phone Number<span className="text-red-600 text-lg">*</span>
             </label>
             <input
               type="text"
@@ -174,9 +204,13 @@ const AddDoctors = () => {
           </div>
 
           <div>
-            <label htmlFor="day" className="block font-medium text-gray-700">
-              Available Day
+            <label
+              htmlFor="day"
+              className="block font-medium text-gray-700 mb-1"
+            >
+              Available Day<span className="text-red-600 text-lg">*</span>
             </label>
+
             <select
               name="day"
               id="day"
@@ -196,9 +230,13 @@ const AddDoctors = () => {
           </div>
 
           <div>
-            <label htmlFor="hour" className="block font-medium text-gray-700">
-              Available Hours
+            <label
+              htmlFor="hour"
+              className="block font-medium text-gray-700 mb-1"
+            >
+              Available Hours<span className="text-red-600 text-lg">*</span>
             </label>
+
             <input
               type="text"
               name="hour"
