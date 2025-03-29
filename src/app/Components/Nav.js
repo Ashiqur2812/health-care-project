@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 
@@ -26,10 +27,7 @@ const Nav = () => {
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
         <li><a>HOME</a></li>
-        <li>
-          <a>ABOUT US</a>
-         
-        </li>
+       <Link href='/about'><li>ABOUT</li></Link>
         <li><a>BLOGS</a></li>
       </ul>
     </div>
@@ -38,10 +36,7 @@ const Nav = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
     <li><a>HOME</a></li>
-        <li>
-          <a>ABOUT US</a>
-         
-        </li>
+    <Link href='/about'><li>ABOUT</li></Link>
         <li><a>BLOGS</a></li>
     </ul>
   </div>
