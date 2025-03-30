@@ -16,7 +16,7 @@ const AddDoctors = () => {
     hour: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const degree = doctor.degree.split(",");
     const experience = doctor.experience.split(",");
@@ -32,7 +32,29 @@ const AddDoctors = () => {
       day: doctor.day,
       hour: doctor.hour,
     };
-    console.log(doctorsData);
+    const response = await fetch("http://localhost:3000/api/doctors/post", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(doctorsData),
+    });
+    const result = await response.json();
+    if (result.success) {
+      alert("Add Doctors Data");
+      setDoctor({
+        name: "",
+        descriptions: "",
+        image: "",
+        degree: "",
+        experience: "",
+        category: "",
+        email: "",
+        phoneNumber: "",
+        day: "",
+        hour: "",
+      });
+    }
   };
 
   return (

@@ -1,8 +1,7 @@
-
-"use client"
-import { signOut, useSession } from 'next-auth/react';
-import Link from 'next/link';
-import React from 'react';
+"use client";
+import { signOut, useSession } from "next-auth/react";
+import Link from "next/link";
+import React from "react";
 // import SignInButton from './SignInButton';
 
 const Nav = () => {
@@ -19,20 +18,29 @@ const Nav = () => {
                 className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor">
+                stroke="currentColor"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16" />
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
               </svg>
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <li><Link href="/">HOME</Link></li>
-              <li><Link href="/about">ABOUT</Link></li>
-              <li><a href="#">BLOGS</a></li>
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li>
+                <Link href="/">HOME</Link>
+              </li>
+              <li>
+                <Link href="/about">ABOUT</Link>
+              </li>
+              <li>
+                <a href="#">BLOGS</a>
+              </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">NORDIS</a>
@@ -40,9 +48,15 @@ const Nav = () => {
 
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><Link href="/">HOME</Link></li>
-            <li><Link href="/about">ABOUT</Link></li>
-            <li><a href="#">BLOGS</a></li>
+            <li>
+              <Link href="/">HOME</Link>
+            </li>
+            <li>
+              <Link href="/about">ABOUT</Link>
+            </li>
+            <li>
+              <a href="#">BLOGS</a>
+            </li>
           </ul>
         </div>
 
@@ -62,10 +76,9 @@ const Nav = () => {
             <SignInButton />
           )} */}
 
-
-        <div className="navbar-end">
-          <a className="btn bg-[#A1EEBD] ">Sign Up</a>
-
+          <div className="navbar-end">
+            <a className="btn bg-[#A1EEBD] ">Sign Up</a>
+          </div>
         </div>
       </div>
     </div>
