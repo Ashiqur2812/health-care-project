@@ -2,7 +2,7 @@ import React from 'react';
 
 const Numeric = () => {
     return (
-        <div className='flex p-3 justify-between items-center container mx-auto  w-[80%] mt-24 bg-[url("https://i.ibb.co.com/4n63MsK9/fun-fact-bg.jpg")] bg-cover bg-no-repeat bg-center h-[400px]'>
+        <div className='flex flex-col md:flex-row gap-4 p-3 justify-between items-center container mx-auto  w-[80%] mt-24 bg-[url("https://i.ibb.co.com/4n63MsK9/fun-fact-bg.jpg")] bg-cover bg-no-repeat bg-center  md:h-[400px]'>
             
            <div className='flex flex-col items-center justify-center h-full text-black'>
             <h1 className='font-bold  text-6xl'>20+</h1>

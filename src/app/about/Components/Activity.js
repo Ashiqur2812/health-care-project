@@ -3,7 +3,7 @@ import React from 'react';
 const Activity = () => {
     return (
         <div className='container mx-auto w-[80%]'>
-            <div className='grid grid-cols-2 md:grid-cols-3 gap-4 items-center'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 items-center'>
                 {/* Text Section */}
                 <div className='col-span-2 p-5'>
                     <h1 className='font-semibold text-3xl text-gray-700 leading-tight'>
