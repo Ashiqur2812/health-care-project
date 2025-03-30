@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const BlogSchema = new mongoose.Schema({
   image: String,
   date: String,
+  title: String,
   description: String,
 });
 
