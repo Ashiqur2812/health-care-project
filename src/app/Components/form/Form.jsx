@@ -112,8 +112,6 @@ const Form= () => {
                             <textarea
                                 className=" bg-[#F0FFF5] textarea textarea-bordered w-full"
                                 placeholder="Write any concerns or details here..."
-                                value=""
-                               
                                 rows="4"
                             ></textarea>
                         </div>
