@@ -39,8 +39,9 @@ const Nav = () => {
                 <Link href="/about">ABOUT</Link>
               </li>
               <li>
-                <a href="#">BLOGS</a>
+                <Link href="/find-doctor">Find Doctor</Link>
               </li>
+              
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">NORDIS</a>
@@ -55,8 +56,8 @@ const Nav = () => {
               <Link href="/about">ABOUT</Link>
             </li>
             <li>
-              <a href="#">BLOGS</a>
-            </li>
+                <Link href="/find-doctor">Find Doctor</Link>
+              </li>
           </ul>
         </div>
 
