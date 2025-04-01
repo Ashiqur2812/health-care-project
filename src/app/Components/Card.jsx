@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Card = ({ data }) => {
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="overflow-hidden hover:shadow-lg transition-shadow">
@@ -24,9 +25,9 @@ const Card = ({ data }) => {
 
       <p className="text-sm text-gray-600 line-clamp-3">{data?.descriptions}</p>
 
-      <button className="w-full bg-blue-600 hover:bg-blue-700">
+      <Link href={`/find-doctor/${data._id}`} className="w-full bg-blue-600 hover:bg-blue-700">
         View Profile
-      </button>
+      </Link>
     </div>
   );
 };

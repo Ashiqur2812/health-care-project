@@ -1,3 +1,4 @@
+// this is just demo design page to get data real ldesign will made by frontend side developer
 import Card from "../Components/Card";
 
 async function getData() {
