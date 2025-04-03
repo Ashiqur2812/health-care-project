@@ -1,7 +1,12 @@
+"use client";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
+// import SignInButton from './SignInButton';
 
 const Nav = () => {
+  // const { data: session } = useSession();
+
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -28,35 +33,53 @@ const Nav = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>HOME</a>
+                <Link href="/">HOME</Link>
               </li>
               <li>
-                <a>ABOUT US</a>
+                <Link href="/about">ABOUT</Link>
               </li>
               <li>
-                <a>BLOGS</a>
+                <Link href="/find-doctor">Find Doctor</Link>
               </li>
-              <Link href="/add-doctors">
-                <li>Add Doctors</li>
-              </Link>
+              
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">NORDIS</a>
         </div>
+
         <div className="navbar-center hidden lg:flex">
-          <ul className=" px-1 flex flex-row gap-5 ">
-            <Link href="/">
-              <li>HOME</li>
-            </Link>
-            <li>ABOUT US</li>
-            <li>BLOGS</li>
-            <Link href="/add-doctors">
-              <li>Add Doctors</li>
-            </Link>
+          <ul className="menu menu-horizontal px-1">
+            <li>
+              <Link href="/">HOME</Link>
+            </li>
+            <li>
+              <Link href="/about">ABOUT</Link>
+            </li>
+            <li>
+                <Link href="/find-doctor">Find Doctor</Link>
+              </li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn bg-[#A1EEBD] ">Sign Up</a>
+
+        <div className="navbar-end flex gap-4">
+          <a className="btn bg-[#A1EEBD]">Sign Up</a>
+
+          {/* {session ? (
+            <>
+              <span className="font-medium">{session.user?.name}</span>
+              <button 
+                onClick={() => signOut()} 
+                className="bg-white text-orange-500 px-4 py-1 rounded">
+                Sign out
+              </button>
+            </>
+          ) : (
+            <SignInButton />
+          )} */}
+
+          <div className="navbar-end">
+            <a className="btn bg-[#A1EEBD] ">Sign Up</a>
+          </div>
         </div>
       </div>
     </div>
