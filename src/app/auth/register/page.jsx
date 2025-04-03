@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMail, FiLock, FiUser, FiArrowRight, FiCheck, FiAlertCircle } from 'react-icons/fi';
 import { FaGoogle, FaGithub, FaTwitter } from 'react-icons/fa';
+import { showLoginSuccessAlert } from "@/app/utils/alertUtils";
 
 export default function RegisterPage() {
     const [formData, setFormData] = useState({
@@ -21,6 +22,8 @@ export default function RegisterPage() {
     const [isVisible, setIsVisible] = useState(false);
     const [passwordStrength, setPasswordStrength] = useState(0);
     const router = useRouter();
+
+    console.log(error)
 
     useEffect(() => {
         setIsVisible(true);
@@ -64,13 +67,45 @@ export default function RegisterPage() {
         }
 
         try {
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            const response = await fetch('/auth/register', {  
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    password: formData.password,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Registration failed');
+            }
+
+            // Automatically sign in the user after registration
+            const signInResult = await signIn('credentials', {
+                email: formData.email,
+                password: formData.password,
+                redirect: false,
+            });
+
+            if (signInResult?.error) {
+                throw new Error(signInResult.error);
+            }
+
+            // Show success alert and redirect
+            await showLoginSuccessAlert(formData.email.split('@')[0]);
             setSuccess(true);
+
+            // Redirect after 2 seconds
             setTimeout(() => {
                 router.push('/');
             }, 2000);
         } catch (err) {
-            setError('Registration failed. Please try again.');
+            setError(err.message || 'Registration failed. Please try again.');
         } finally {
             setLoading(false);
         }
@@ -106,6 +141,30 @@ export default function RegisterPage() {
         'bg-lime-400',
         'bg-green-400'
     ];
+
+    const handleSocialLogin = async (provider) => {
+        setLoading(true);
+        setError('');
+
+        try {
+            const result = await signIn(provider, {
+                callbackUrl: '/',
+                redirect: false
+            });
+
+            if (result?.error) {
+                setError(result.error || 'Authentication failed');
+            } else {
+                // For social login, we'll show the alert after redirection
+                // We'll handle this in the dashboard page
+                router.push('/');
+            }
+        } catch (error) {
+            setError('Authentication failed. Please try again.');
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <>
@@ -421,7 +480,7 @@ export default function RegisterPage() {
                                         variants={staggerContainer}
                                     >
                                         <motion.button
-                                            onClick={() => signIn('google')}
+                                            onClick={() => handleSocialLogin('google')}
                                             whileHover={{ y: -2 }}
                                             whileTap={{ scale: 0.98 }}
                                             variants={fadeInUp}
@@ -431,7 +490,7 @@ export default function RegisterPage() {
                                         </motion.button>
 
                                         <motion.button
-                                            onClick={() => signIn('github')}
+                                                onClick={() => handleSocialLogin('github')}
                                             whileHover={{ y: -2 }}
                                             whileTap={{ scale: 0.98 }}
                                             variants={fadeInUp}
@@ -441,7 +500,7 @@ export default function RegisterPage() {
                                         </motion.button>
 
                                         <motion.button
-                                            onClick={() => signIn('twitter')}
+                                                onClick={() => handleSocialLogin('twitter')}
                                             whileHover={{ y: -2 }}
                                             whileTap={{ scale: 0.98 }}
                                             variants={fadeInUp}
