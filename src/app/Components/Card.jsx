@@ -25,7 +25,10 @@ const Card = ({ data }) => {
 
       <p className="text-sm text-gray-600 line-clamp-3">{data?.descriptions}</p>
 
-      <Link href={`/find-doctor/${data._id}`} className="w-full bg-blue-600 hover:bg-blue-700">
+      <Link
+        href={`/find-doctor/${data._id}`}
+        className="w-full bg-blue-600 hover:bg-blue-700"
+      >
         View Profile
       </Link>
     </div>

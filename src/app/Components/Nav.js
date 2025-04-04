@@ -41,7 +41,9 @@ const Nav = () => {
               <li>
                 <Link href="/find-doctor">Find Doctor</Link>
               </li>
-              
+              <li>
+                <Link href="/blogs">Blogs</Link>
+              </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">NORDIS</a>
@@ -56,8 +58,11 @@ const Nav = () => {
               <Link href="/about">ABOUT</Link>
             </li>
             <li>
-                <Link href="/find-doctor">Find Doctor</Link>
-              </li>
+              <Link href="/find-doctor">Find Doctor</Link>
+            </li>
+            <li>
+              <Link href="/blogs">Blogs</Link>
+            </li>
           </ul>
         </div>
 
