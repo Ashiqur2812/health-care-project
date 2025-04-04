@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import { connectMongodb } from "../../../../../lib/mongodb";
 import { NextResponse } from "next/server";
+import connectMongodb from "../../../../../lib/mongodb";
 import { BlogModel } from "../../../../../model/blogModel/blogModel";
 
 export const POST = async (req) => {
