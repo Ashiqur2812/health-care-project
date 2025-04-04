@@ -25,7 +25,7 @@ async function getData() {
 }
 const page = async () => {
   const datas = await getData();
-  console.log(datas);
+  // console.log(datas);
   return (
     <div className="mb-8 text-center space-y-3 ">
       <h1 className="text-3xl font-bold mb-2">Our Medical Specialists</h1>
