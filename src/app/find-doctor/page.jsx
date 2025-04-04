@@ -1,12 +1,20 @@
-// this is just demo design page to get data real ldesign will made by frontend side developer
+// this is just demo design page to get data real design will made by frontend side developer
 import Card from "../Components/Card";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/doctors/get");
-  if (!res.ok) {
-    throw new Error("Failed To fetch data");
+  try {
+    const res = await fetch("http://localhost:3000/api/doctors/get", {
+      next: { revalidate: 60 } // Optional: Cache for 60 seconds
+    });
+    
+    if (!res.ok) {
+      throw new Error(`Failed to fetch (Status ${res.status})`);
+    }
+    return await res.json();
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return []; // Return empty array as fallback
   }
-  return res.json();
 }
 
 const page = async () => {

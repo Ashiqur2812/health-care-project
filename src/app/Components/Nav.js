@@ -44,7 +44,7 @@ const Nav = () => {
               
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">NORDIS</a>
+          <Link href='/' className="btn btn-ghost text-xl">NORDIS</Link>
         </div>
 
         <div className="navbar-center hidden lg:flex">
@@ -62,7 +62,7 @@ const Nav = () => {
         </div>
 
         <div className="navbar-end flex gap-4">
-          <a className="btn bg-[#A1EEBD]">Sign Up</a>
+          {/* <a className="btn bg-[#A1EEBD]">Sign Up</a> */}
 
           {/* {session ? (
             <>
@@ -78,7 +78,7 @@ const Nav = () => {
           )} */}
 
           <div className="navbar-end">
-            <a className="btn bg-[#A1EEBD] ">Sign Up</a>
+            <Link href='/auth/register' className="btn bg-[#A1EEBD] ">Sign Up</Link>
           </div>
         </div>
       </div>
