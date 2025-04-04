@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 //create post route in doctors
 export const POST = async (req) => {
   const payload = await req.json();
-  await mongoose.connect(connectMongodb);
+  await connectMongodb();
   const result = new DoctorModel(payload);
   await result.save();
   return NextResponse.json({ success: true, status: 200 });

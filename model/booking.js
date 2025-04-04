@@ -9,4 +9,5 @@ const bookingSchema = new mongoose.Schema({
     time:{type:String}
 })
 
-export default mongoose.model.appoinments || mongoose.model('appoinments', bookingSchema)
+const booking = mongoose.models.booking || mongoose.model("booking", bookingSchema);
+export default booking;
