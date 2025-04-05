@@ -7,9 +7,9 @@ const Card = ({ data }) => {
   console.log(data);
 
   return (
-    <div className="overflow-hidden hover:shadow-lg transition-shadow rounded-lg bg-white">
+    <div className="overflow-hidden rounded-lg border-sky-100 border-2 p-2">
       {/* Image Section */}
-      <div className="relative h-48 bg-gray-100">
+      <div className="relative h-72 bg-gray-100">
         <Image
           src={data?.image}
           alt={data?.name}
@@ -17,15 +17,15 @@ const Card = ({ data }) => {
           height={300}
           className="object-cover w-full h-full"
         ></Image>
-        <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded">
+        <div className="absolute text-xl bottom-0 left-28 bg-[#307bc4] text-white px-8 py-1 rounded-tl-xl rounded-tr-xl">
           {data?.category}
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="p-4">
-        <h2 className="text-lg font-semibold text-gray-800">{data?.name}</h2>
-        <p className="text-sm text-gray-600 line-clamp-3">
+      <div className="p-4 bg-white">
+        <h2 className="text-2xl font-semibold text-gray-800">{data?.name}</h2>
+        <p className="text-lg text-gray-600 line-clamp-3">
           {data?.descriptions}
         </p>
       </div>
@@ -33,7 +33,7 @@ const Card = ({ data }) => {
       {/* Button */}
       <Link
         href={`/find-doctor/${data._id}`}
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white text-center block py-2 rounded"
+        className="w-full bg-[#86bbf1] hover:bg-[#307bc4] text-white text-center block p-4 text-xl rounded"
       >
         View Profile
       </Link>

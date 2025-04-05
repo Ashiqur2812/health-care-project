@@ -2,14 +2,13 @@
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
-// import SignInButton from './SignInButton';
 
 const Nav = () => {
   // const { data: session } = useSession();
 
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-gradient-to-r from-[#d2eaef] to-[#ABD1F2] text-[#274760]">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,10 +32,10 @@ const Nav = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <Link href="/">HOME</Link>
+                <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/about">ABOUT</Link>
+                <Link href="/about">About</Link>
               </li>
               <li>
                 <Link href="/find-doctor">Find Doctor</Link>
@@ -44,18 +43,34 @@ const Nav = () => {
               <li>
                 <Link href="/blogs">Blogs</Link>
               </li>
+              <li>
+                <details>
+                  <summary>Pages</summary>
+                  <ul>
+                  <li>
+                    <Link href="/pages/appointments">Appointments</Link>
+                  </li>
+                  <li>
+                    <Link href="/pages/departments">Departments</Link>
+                  </li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <Link href="/contact">Contact</Link>
+              </li>
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">NORDIS</a>
+          <a className="btn btn-ghost text-2xl">NORDIS</a>
         </div>
 
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 text-lg">
             <li>
-              <Link href="/">HOME</Link>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/about">ABOUT</Link>
+              <Link href="/about">About</Link>
             </li>
             <li>
               <Link href="/find-doctor">Find Doctor</Link>
@@ -63,28 +78,27 @@ const Nav = () => {
             <li>
               <Link href="/blogs">Blogs</Link>
             </li>
+            <li>
+              <details className="dropdown">
+                <summary className="cursor-pointer">Pages</summary>
+                <ul className="p-2 bg-white rounded-t-none z-10">
+                  <li>
+                    <Link href="/pages/appointments">Appointments</Link>
+                  </li>
+                  <li>
+                    <Link href="/pages/departments">Departments</Link>
+                  </li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
           </ul>
         </div>
 
-        <div className="navbar-end flex gap-4">
-          <a className="btn bg-[#A1EEBD]">Sign Up</a>
-
-          {/* {session ? (
-            <>
-              <span className="font-medium">{session.user?.name}</span>
-              <button 
-                onClick={() => signOut()} 
-                className="bg-white text-orange-500 px-4 py-1 rounded">
-                Sign out
-              </button>
-            </>
-          ) : (
-            <SignInButton />
-          )} */}
-
-          <div className="navbar-end">
-            <a className="btn bg-[#A1EEBD] ">Sign Up</a>
-          </div>
+        <div className="navbar-end">
+          <a className="btn border-0 bg-[#307BC4]">Sign Up</a>
         </div>
       </div>
     </div>
