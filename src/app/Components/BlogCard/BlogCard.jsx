@@ -25,7 +25,7 @@ const BlogCard = ({ blog }) => {
       </p>
       <button
         onClick={handleShowFull}
-        className="text-blue-500 mt-3 font-medium"
+        className="text-[#274760] mt-5 font-medium hover:text-blue-500 hover:underline"
       >
         {showFull ? "Show Less" : "Learn more"}
       </button>
