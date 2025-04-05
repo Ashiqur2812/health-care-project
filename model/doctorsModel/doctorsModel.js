@@ -14,4 +14,4 @@ const DoctorSchema = new mongoose.Schema({
 });
 
 export const DoctorModel =
-  mongoose.models.doctor || mongoose.model("doctor", DoctorSchema);
+  mongoose.models.doctors || mongoose.model("doctors", DoctorSchema);

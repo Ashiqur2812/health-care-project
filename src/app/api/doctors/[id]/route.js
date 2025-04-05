@@ -1,11 +1,10 @@
 import { NextResponse } from "next/server";
 import { DoctorModel } from "../../../../../model/doctorsModel/doctorsModel";
-import { connectMongoString } from "../../../../../lib/mongodb";
-
+import connectMongodb from "../../../../lib/mongodb";
 export const GET = async (req, { params }) => {
   console.log("this is id:", params);
   try {
-    await connectMongoString();
+    await connectMongodb()
     const findid = params?.id;
     console.log("this is findid:", findid);
 

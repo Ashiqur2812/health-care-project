@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import booking from "../../../../model/booking";
-import connectMongodb from "../../../../lib/mongodb";
+import { connectMongoString } from "../../../../lib/mongodb";
 //  this is post requse for appoinmnet
 export async function POST(request) {
   try {
@@ -11,7 +11,7 @@ export async function POST(request) {
     //     return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     // }
     // connection to mongodb
-    await connectMongodb();
+    await connectMongoString()
 
     // chekcing already booked or not
     // const alreadyBooked = await booking.findone({name, preferDate})
@@ -41,7 +41,7 @@ export async function POST(request) {
 
 export const GET = async (req) => {
   try {
-    await connectMongodb(); // ✅ Fixed missing await
+    await connectMongoString(); // ✅ Fixed missing await
     const allAppointments = await booking.find(); // ✅ Fixed incorrect variable
     return NextResponse.json(allAppointments, { status: 200 });
   } catch (error) {

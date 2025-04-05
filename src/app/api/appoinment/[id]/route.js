@@ -1,7 +1,7 @@
 // this is delete and update route for appoinment
 
 import { NextResponse } from "next/server";
-import connectMongodb from "../../../../../lib/mongodb";
+import connectMongoString from "../../../../../lib/mongodb";
 import booking from "../../../../../model/booking";
 
 // 1. create the delete method : (done)
@@ -11,7 +11,7 @@ import booking from "../../../../../model/booking";
 export const DELETE = async (req, { params }) => {
   try {
     // connect mongoose
-    await connectMongodb();
+    await connectMongoString()
     // destructure the id
     const { id } = params;
     // now delete it
@@ -33,8 +33,7 @@ export const DELETE = async (req, { params }) => {
 
 export const PATCH = async (req, { params }) => {
   try {
-    await connectMongodb();
-
+    await connectMongoString()
     const { id } = params;
     // get the updated data from the req
     const changedData = await req.json();

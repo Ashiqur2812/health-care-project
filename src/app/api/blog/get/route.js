@@ -1,11 +1,9 @@
-import mongoose from "mongoose";
-
+import { connectMongoString } from "../../../../../lib/mongodb";
 import { BlogModel } from "../../../../../model/blogModel/blogModel";
 import { NextResponse } from "next/server";
-import { connectMongoString } from "../../../../../lib/mongodb";
 
 export const GET = async () => {
-  await mongoose.connect(connectMongoString);
+  await connectMongoString()
   const result = await BlogModel.find();
   return NextResponse.json(result);
 };
