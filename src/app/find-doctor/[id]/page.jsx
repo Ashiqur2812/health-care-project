@@ -10,7 +10,6 @@ const Doctordetails = async ({params}) => {
 //    data has been fetched here ui developer should design with this data
 const {name, image} = doctor; // i just destructure two data for to show example 
    console.log(doctor);
-   
     return (
         <div>
             doctor profile id : {params.id}
