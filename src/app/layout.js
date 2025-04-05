@@ -2,13 +2,14 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "./components/footer";
 import Nav from "./components/Nav";
-import { Providers } from './providers';
+import Providers from "./providers"; 
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
+
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
@@ -23,14 +24,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`bg-white ${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Nav />
-        <div>
-          <Providers>{children}</Providers>
-        </div>
-        <Footer></Footer>
+      <body className={`bg-white ${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Providers>
+          <Nav />
+          <div>{children}</div>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
