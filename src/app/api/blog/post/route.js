@@ -6,7 +6,6 @@ import { connectMongoString } from "../../../../../lib/mongodb";
 
 export const POST = async (req) => {
   const payload = await req.json();
-  console.log(payload);
   await mongoose.connect(connectMongoString);
   const result = new BlogModel(payload);
   await result.save();
