@@ -57,7 +57,7 @@ export default function Departments() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <div className="relative flex flex-col md:flex-row items-center justify-between container mx-auto px-4 lg:px-24 bg-[#82c4f785] ">
+      <div className="relative flex flex-col md:flex-row items-center justify-between container mx-auto px-4 lg:px-24 bg-gradient-to-r from-[#d2eaef] to-[#ABD1F2]">
         {/* Left Content */}
         <div className="max-w-2xl text-center md:text-left">
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900">
