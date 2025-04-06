@@ -91,7 +91,7 @@ const AppointmentForm = () => {
     };
 
     return (
-        <div className="relative py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden min-h-screen">
+        <div className="relative py-20 bg-gradient-to-b from-teal-50 to-sky-50 overflow-hidden min-h-screen w-11/12 md:w-11/12 lg:w-11/12 xl:container mx-auto">
             {/* Floating decorative elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-[#61bece]/10 blur-3xl animate-pulse"></div>

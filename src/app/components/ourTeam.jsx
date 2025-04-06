@@ -16,7 +16,7 @@ const teamMembers = [
   },
   {
     id: 2,
-    image: "/img/doctor2.jpg",
+    image: "https://i.ibb.co.com/8n1sTHCr/stock-photo-portrait-of-handsome-male-doctor-with-stethoscope-over-neck-working-while-looking-at-cam.jpg",
     name: "Dr. Sarah Johnson",
     designation: "Cardiologist",
     specialty: "Interventional Cardiology",
@@ -25,7 +25,7 @@ const teamMembers = [
   },
   {
     id: 3,
-    image: "/img/doctor3.jpg",
+    image: "https://i.ibb.co.com/d0TzGzNF/muslim-malay-woman-doctor-in-hospital-with-copy-space-ai-generated-photo.jpg",
     name: "Dr. David Brown",
     designation: "Orthopedic Surgeon",
     specialty: "Joint Replacement Specialist",
@@ -34,7 +34,7 @@ const teamMembers = [
   },
   {
     id: 4,
-    image: "/img/doctor4.jpg",
+    image: "https://i.ibb.co.com/R1mgrck/premium-photo-1658506671316-0b293df7c72b-fm-jpg-q-60-w-3000-ixlib-rb-4-0.jpg",
     name: "Dr. Emily Davis",
     designation: "Pediatrician",
     specialty: "Neonatal Care",
@@ -43,7 +43,7 @@ const teamMembers = [
   },
   {
     id: 5,
-    image: "/img/doctor5.jpg",
+    image: "https://i.ibb.co.com/7JnQyrhr/young-male-doctor-close-up-happy-looking-camera-56751540.jpg",
     name: "Dr. Michael Wilson",
     designation: "Dermatologist",
     specialty: "Cosmetic Dermatology",
@@ -52,7 +52,7 @@ const teamMembers = [
   },
   {
     id: 6,
-    image: "/img/doctor6.jpg",
+    image: "https://i.ibb.co.com/m5GR1LXc/profile-photo-attractive-family-doc-600nw-1724693776.jpg",
     name: "Dr. Olivia Martinez",
     designation: "Gynecologist",
     specialty: "High-Risk Pregnancies",
@@ -61,7 +61,7 @@ const teamMembers = [
   },
   {
     id: 7,
-    image: "/img/doctor7.jpg",
+    image: "https://i.ibb.co.com/jPBHvmMQ/360-F-260040900-o-O6-YW1s-HTn-Kxby4-Gcj-Cvtyp-UCWjn-QRg5.jpg",
     name: "Dr. James Anderson",
     designation: "Oncologist",
     specialty: "Hematologic Malignancies",
@@ -70,7 +70,7 @@ const teamMembers = [
   },
   {
     id: 8,
-    image: "/img/doctor8.jpg",
+    image: "https://i.ibb.co.com/T6Hx6cy/2a0e8cb609405d9ca87bc81154b9c443.jpg",
     name: "Dr. Sophia Lee",
     designation: "Psychiatrist",
     specialty: "Cognitive Behavioral Therapy",
@@ -120,7 +120,7 @@ const OurTeam = () => {
   };
 
   return (
-    <section className="relative py-10 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section className="relative py-10 bg-gradient-to-b from-sky-50 to-teal-50 overflow-hidden w-11/12 md:w-11/12 lg:w-11/12 xl:container mx-auto">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-sky-400/10 blur-3xl"></div>
