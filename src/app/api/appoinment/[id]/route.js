@@ -1,8 +1,9 @@
-// this is delete and update route for appoinment
+// this is delete and update route for appointment
 
 import { NextResponse } from "next/server";
-import connectMongodb from "../../../../../lib/mongodb";
-import booking from "../../../../../model/booking";
+import connectMongodb from "/lib/mongodb";
+import booking from "/model/booking";
+// import booking from "../../../../../model/booking";
 
 // 1. create the delete method : (done)
 // 2.create update method
