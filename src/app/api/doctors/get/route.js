@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import { DoctorModel } from "../../../../../model/doctorsModel/doctorsModel";
-import { connectMongoString } from "../../../../../lib/mongodb";
+import { connectMongodb } from "../../../../../lib/mongodb";
 import mongoose from "mongoose";
 
 export const GET = async () => {
-  await mongoose.connect(connectMongoString);
+  await mongoose.connect(connectMongodb);
   const result = await DoctorModel.find();
   return NextResponse.json(result);
 };
