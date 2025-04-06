@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
-import { connectMongodb } from "../../../../../lib/mongodb";
-import newUser from "../../../../../model/newUser";
+import { connectMongodb } from "/lib/mongodb";
+import newUser from "/model/newUser";
 
 export const POST = async (req) => {
   const payload = await req.json();

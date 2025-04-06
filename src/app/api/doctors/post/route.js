@@ -1,6 +1,6 @@
-import { DoctorModel } from "../../../../../model/doctorsModel/doctorsModel";
+import { DoctorModel } from "/model/doctorsModel/doctorsModel";
 import { NextResponse } from "next/server";
-import { connectMongodb } from "../../../../../lib/mongodb";
+import { connectMongodb } from "/lib/mongodb";
 import mongoose from "mongoose";
 
 //create post route in doctors

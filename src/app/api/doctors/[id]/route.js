@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { DoctorModel } from "../../../../../model/doctorsModel/doctorsModel";
-import { connectMongodb } from "../../../../../lib/mongodb";
+import { DoctorModel } from "/model/doctorsModel/doctorsModel";
+import { connectMongodb } from "/lib/mongodb";
 import mongoose from "mongoose";
 
 export const GET = async (req, { params }) => {
