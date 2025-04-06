@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Card from "../Components/Card";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const fetchDoctors = async () => {
@@ -9,9 +9,7 @@ const fetchDoctors = async () => {
     const res = await fetch("http://localhost:3000/api/doctors/get", {
       next: { revalidate: 60 },
     });
-    if (!res.ok) {
-      throw new Error(`Failed to fetch (Status ${res.status})`);
-    }
+    if (!res.ok) throw new Error(`Failed to fetch (Status ${res.status})`);
     return await res.json();
   } catch (error) {
     console.error("Fetch error:", error);
@@ -33,6 +31,7 @@ const Page = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
     >
+      {/* Heading Section */}
       <div className="text-center mb-10">
         <motion.h1
           className="text-4xl sm:text-5xl font-extrabold tracking-tight text-sky-800"
@@ -42,17 +41,20 @@ const Page = () => {
         >
           Meet Our Elite Medical Team
         </motion.h1>
+
         <motion.p
           className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          Discover compassionate care from certified specialists dedicated to your health journey.
-          Personalized expertise in one place, tailored to meet your every need.
+          Discover compassionate care from certified specialists dedicated to
+          your health journey. Personalized expertise in one place, tailored to
+          meet your every need.
         </motion.p>
       </div>
 
+      {/* Cards Grid */}
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12"
         initial="hidden"
