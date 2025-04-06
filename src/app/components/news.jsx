@@ -9,7 +9,7 @@ const blogs = [
     title: "The Future of Telemedicine",
     description: "Discover how telemedicine is revolutionizing patient care with virtual consultations, remote monitoring, and AI-assisted diagnostics that bring healthcare to your fingertips.",
     date: "March 26, 2025",
-    image: "/img/news1.jpg",
+    image: "https://i.ibb.co.com/v6LMM0B6/Getty-Images-2027653518.jpg",
     category: "Technology",
     accent: "bg-sky-500/10 border-sky-500/30 text-sky-500"
   },
@@ -18,7 +18,7 @@ const blogs = [
     title: "AI in Healthcare: A Game Changer",
     description: "Explore how machine learning algorithms are enhancing diagnostic accuracy, predicting patient outcomes, and personalizing treatment plans for better healthcare delivery.",
     date: "March 20, 2025",
-    image: "/img/news2.jpg",
+    image: "https://i.ibb.co.com/YBq9JyJ8/493216423-56a46de65f9b58b7d0d6f3a2.jpg",
     category: "Innovation",
     accent: "bg-purple-500/10 border-purple-500/30 text-purple-500"
   },
@@ -27,7 +27,7 @@ const blogs = [
     title: "Holistic Health Strategies",
     description: "Evidence-based approaches combining nutrition, exercise, and mindfulness to optimize your wellbeing and prevent chronic diseases before they start.",
     date: "March 15, 2025",
-    image: "/img/news3.jpg",
+    image: "https://i.ibb.co.com/b5vq1ydG/Medical-doctors-and-nurse-practitioners-discuss-paperwork-in-a-hallway.jpg",
     category: "Wellness",
     accent: "bg-emerald-500/10 border-emerald-500/30 text-emerald-500"
   },
@@ -70,7 +70,7 @@ const NewsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-teal-50 to-sky-50 relative overflow-hidden w-11/12 md:w-11/12 lg:w-11/12 xl:container mx-auto">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-sky-400/10 blur-3xl"></div>

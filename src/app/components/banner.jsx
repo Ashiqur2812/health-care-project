@@ -100,8 +100,8 @@ const Banner = () => {
                 }}
                 data-swiper-parallax="-30%"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-black/20"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
               </div>
 
               {/* Floating Particles */}
@@ -144,12 +144,12 @@ const Banner = () => {
                   }}
                 >
                   <motion.h1
-                    className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+                    className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-teal-600"
                     variants={textVariants}
                     data-swiper-parallax="-200"
                   >
                     {slide.title} <span
-                      className="text-[${slide.accent}] drop-shadow-[0_0_10px_rgba(97,190,206,0.5)]"
+                      className="text-[${slide.accent}] drop-shadow-[0_0_10px_rgba(97,190,206,0.5)] font-bold"
                       style={{ color: slide.accent }}
                     >
                       {slide.highlight}
@@ -157,7 +157,7 @@ const Banner = () => {
                   </motion.h1>
 
                   <motion.p
-                    className="text-lg md:text-xl text-gray-100 mb-8 max-w-lg leading-relaxed"
+                    className="text-lg md:text-xl text-white mb-8 max-w-lg leading-relaxed"
                     variants={textVariants}
                     data-swiper-parallax="-150"
                   >

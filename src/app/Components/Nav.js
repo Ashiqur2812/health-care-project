@@ -24,7 +24,7 @@ const Nav = () => {
         animate={{ opacity: 1 }}
         className="sticky top-0 z-50 backdrop-blur-lg bg-white/80 border-b border-gray-100 shadow-sm"
       >
-        <div className="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="navbar w-11/12 md:w-11/12 lg:w-11/12 xl:container mx-auto">
           <div className="navbar-start">
             <Link href='/' className="btn btn-ghost text-xl font-bold text-gray-900">NORDIS</Link>
           </div>

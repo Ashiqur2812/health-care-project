@@ -4,6 +4,7 @@ import { FaUserMd, FaStethoscope, FaHospital, FaPhone, FaCalendarAlt, FaMapMarke
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const DoctorDetails = ({ params }) => {
     const [doctor, setDoctor] = useState(null);
@@ -11,6 +12,16 @@ const DoctorDetails = ({ params }) => {
     const [activeTab, setActiveTab] = useState('about');
     const [isImageLoaded, setIsImageLoaded] = useState(false);
     const router = useRouter();
+    const containerStyle = {
+        width: '100%',
+        height: '100%'
+    };
+
+    // Set your medical center's coordinates
+    const center = {
+        lat: 37.7749,  // Replace with your latitude
+        lng: -122.4194 // Replace with your longitude
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -162,7 +173,7 @@ const DoctorDetails = ({ params }) => {
                                 animate={{ scale: 1, opacity: 1 }}
                                 transition={{ delay: 0.4 }}
                             >
-                                {doctor.specialty || 'Medical Specialist'}
+                                {doctor.category || 'Medical Specialist'}
                             </motion.div>
                         </div>
 
@@ -195,7 +206,7 @@ const DoctorDetails = ({ params }) => {
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4 }}
                             >
-                                {doctor.bio || 'Board-certified physician with extensive experience providing exceptional patient care.'}
+                                {doctor.descriptions || 'Board-certified physician with extensive experience providing exceptional patient care.'}
                             </motion.p>
 
                             <motion.div
@@ -209,7 +220,7 @@ const DoctorDetails = ({ params }) => {
                                         <FaHospital />
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold">{doctor.experience || 10}+ Years</h4>
+                                        <h4 className="font-semibold text-gray-500">{doctor.experience || 10}+ Years</h4>
                                         <p className="text-sm text-gray-500">Experience</p>
                                     </div>
                                 </div>
@@ -218,7 +229,7 @@ const DoctorDetails = ({ params }) => {
                                         <FaStethoscope />
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold">{doctor.specialty || 'General'}</h4>
+                                        <h4 className="font-semibold text-gray-500">{doctor.category || 'General'}</h4>
                                         <p className="text-sm text-gray-500">Specialty</p>
                                     </div>
                                 </div>
@@ -227,7 +238,7 @@ const DoctorDetails = ({ params }) => {
                                         <FaUserMd />
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold">{doctor.patients || 5000}+</h4>
+                                        <h4 className="font-semibold text-gray-500">{doctor.patients || 5000}+</h4>
                                         <p className="text-sm text-gray-500">Patients</p>
                                     </div>
                                 </div>
@@ -236,7 +247,7 @@ const DoctorDetails = ({ params }) => {
                                         <FaStar />
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold">{doctor.successRate || 95}%</h4>
+                                        <h4 className="font-semibold text-gray-500">{doctor.successRate || 95}%</h4>
                                         <p className="text-sm text-gray-500">Success Rate</p>
                                     </div>
                                 </div>
@@ -310,7 +321,7 @@ const DoctorDetails = ({ params }) => {
                                         <h3 className="text-xl font-bold text-gray-800 mb-4">  About Dr. {doctor?.name?.split(' ')[1] || doctor?.name || 'Name'}</h3>
                                         <p className="text-gray-600 mb-4">
                                             {doctor?.bio ||
-                                                `Dr. ${doctor?.name?.split(' ')[1] || doctor?.name || 'Name'} is a board-certified physician with extensive experience in ${doctor?.specialty || 'various medical fields'}. With a patient-centered approach, Dr. ${doctor?.name?.split(' ')[1] || doctor?.name || 'Name'} combines cutting-edge medical knowledge with compassionate care.`
+                                                `Dr. ${doctor?.name?.split(' ')[1] || doctor?.name || 'Name'} is a board-certified physician with extensive experience in ${doctor?.category || 'various medical fields'}. With a patient-centered approach, Dr. ${doctor?.name?.split(' ')[1] || doctor?.name || 'Name'} combines cutting-edge medical knowledge with compassionate care.`
                                             }
                                         </p>
 
@@ -328,7 +339,7 @@ const DoctorDetails = ({ params }) => {
                                                     </li>
                                                     <li className="flex items-start gap-2">
                                                         <span className="text-sky-500 mt-1">•</span>
-                                                        <span className='text-teal-500'>Fellowship in {doctor.fellowship || doctor.specialty || 'Cardiology'}</span>
+                                                        <span className='text-teal-500'>Fellowship in {doctor.fellowship || doctor.category || 'Cardiology'}</span>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -337,7 +348,7 @@ const DoctorDetails = ({ params }) => {
                                                 <ul className="space-y-2">
                                                     <li className="flex items-start gap-2">
                                                         <span className="text-sky-500 mt-1">•</span>
-                                                        <span className='text-teal-500'>Board Certified in {doctor.specialty || 'Internal Medicine'}</span>
+                                                        <span className='text-teal-500'>Board Certified in {doctor.category || 'Internal Medicine'}</span>
                                                     </li>
                                                     <li className="flex items-start gap-2">
                                                         <span className="text-sky-500 mt-1">•</span>
@@ -445,7 +456,7 @@ const DoctorDetails = ({ params }) => {
                                                     <div>
                                                         <h4 className="font-semibold text-gray-800 mb-1">Contact</h4>
                                                         <p className="text-gray-600">
-                                                            Phone: {doctor.phone || '(555) 123-4567'}
+                                                            Phone: {doctor.phoneNumber || '(555) 123-4567'}
                                                             <br />
                                                             Fax: {doctor.fax || '(555) 123-4568'}
                                                             <br />
@@ -469,11 +480,19 @@ const DoctorDetails = ({ params }) => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="bg-gray-200 rounded-lg overflow-hidden h-64">
-                                                {/* Map placeholder */}
-                                                <div className="w-full h-full flex items-center justify-center text-gray-500">
-                                                    Medical Center Location Map
-                                                </div>
+                                            <div className="rounded-lg overflow-hidden h-64">
+                                                <LoadScript
+                                                    googleMapsApiKey="AIzaSyB8TQFKhD2gdq5VNp4d3uG4JJ-fNnM1i4U" // Replace with your actual API key
+                                                >
+                                                    <GoogleMap
+                                                        mapContainerStyle={containerStyle}
+                                                        center={center}
+                                                        zoom={15} // Adjust zoom level as needed
+                                                    >
+                                                        {/* Marker for your medical center */}
+                                                        <Marker position={center} />
+                                                    </GoogleMap>
+                                                </LoadScript>
                                             </div>
                                         </div>
                                     </div>
