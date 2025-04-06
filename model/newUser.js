@@ -6,7 +6,7 @@ const newUserSchema = new mongoose.Schema({
   password: {type: String},
   role:{type:String, default:'patient'}
 });
-// checking shcema has or not and export schema variables
+// checking schema has or not and export schema variables
 // export const usersModel =
 //   mongoose.models.newUsers || mongoose.model("newUsers", newUserSchema);
   export default mongoose.model.newUser || mongoose.model('newUser', newUserSchema);
