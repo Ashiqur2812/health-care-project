@@ -93,7 +93,7 @@ const Card = ({ data }) => {
           transition={{ delay: 0.3 }}
         >
           <FaUserMd className="mr-2" />
-          <span className="text-sm">{data?.specialty || 'Medical Specialist'}</span>
+          <span className="text-sm">{data?.category || 'Medical Specialist'}</span>
         </motion.div>
 
         <motion.div

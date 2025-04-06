@@ -119,7 +119,7 @@ const Numeric = () => {
                             </h3>
 
                             {/* Stat label */}
-                            <h4 className="text-xl font-semibold mb-2">{stat.label}</h4>
+                            <h4 className="text-xl font-semibold mb-2 text-teal-600">{stat.label}</h4>
 
                             {/* Description with subtle animation */}
                             <motion.p
