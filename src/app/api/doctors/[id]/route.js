@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 import { DoctorModel } from "/model/doctorsModel/doctorsModel";
-import { connectMongodb } from "/lib/mongodb";
+// import { connectMongodb } from "/lib/mongodb";
 import mongoose from "mongoose";
+import { connectToDatabase } from "/lib/mongodb";
 
 export const GET = async (req, { params }) => {
   console.log("this is id:", params);
   try {
-    await mongoose.connect(connectMongodb);
+    await connectToDatabase();
     const findid = params?.id;
     console.log("this is findid:", findid);
 

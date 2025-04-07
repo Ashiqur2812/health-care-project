@@ -66,7 +66,7 @@ const Numeric = () => {
     }, []);
 
     return (
-        <div className="relative py-20 overflow-hidden w-11/12 mx-auto">
+        <div className="relative py-20 overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute inset-0 bg-[url('https://i.ibb.co.com/4n63MsK9/fun-fact-bg.jpg')] bg-cover bg-center bg-no-repeat "></div>
             <div className="absolute inset-0 backdrop-blur-sm"></div>
@@ -75,7 +75,7 @@ const Numeric = () => {
             <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-blue-500/10 blur-3xl"></div>
             <div className="absolute -bottom-20 -right-20 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl"></div>
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="w-11/12 md:w-11/12 lg:w-11/12 xl:container mx-auto relative z-10">
                 <motion.div
                     className="stats-container grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
                     initial="hidden"

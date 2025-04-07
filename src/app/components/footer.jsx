@@ -5,8 +5,10 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube, FaChevronRight, FaPaperPlane } from 'react-icons/fa';
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
+
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [isHovering, setIsHovering] = useState(null);
@@ -43,6 +45,9 @@ const Footer = () => {
     { day: 'Saturday', time: '9:00 AM - 6:30 PM' },
     { day: 'Sunday', time: 'Emergency Only' },
   ];
+
+  const pathname = usePathname();
+  if (pathname.startsWith("/auth")) return null;
 
   return (
     <footer className="bg-gradient-to-b from-[#0a3d62] to-[#082032] text-white pt-16 pb-8">

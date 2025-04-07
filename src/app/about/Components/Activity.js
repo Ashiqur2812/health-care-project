@@ -74,14 +74,14 @@ const Activity = () => {
     };
 
     return (
-        <section className="relative py-10 bg-gradient-to-b from-teal-50 to-sky-50 overflow-hidden w-11/12 mx-auto">
+        <section className="relative py-10 bg-gradient-to-b from-teal-50 to-sky-50 overflow-hidden">
             {/* Decorative background elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-sky-400/10 blur-3xl"></div>
                 <div className="absolute -left-20 -bottom-20 w-72 h-72 rounded-full bg-purple-400/10 blur-3xl"></div>
             </div>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="w-11/12 md:w-11/12 lg:w-11/12 xl:container mx-auto relative z-10">
                 {/* Header Section */}
                 <motion.div
                     className="mb-16"
@@ -118,7 +118,7 @@ const Activity = () => {
                             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-cyan-400">Innovative</span> Healthcare Activities
                         </h2>
                         <p className="text-gray-600 text-lg">
-                            From community outreach to cutting-edge research, we're pushing boundaries in medical care to deliver exceptional results for our patients.
+                            From community outreach to cutting-edge research, we are pushing boundaries in medical care to deliver exceptional results for our patients.
                         </p>
                     </motion.div>
 
