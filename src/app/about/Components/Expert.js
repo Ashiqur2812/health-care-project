@@ -108,14 +108,14 @@ const Expert = () => {
   };
 
   return (
-    <div className="relative py-24 bg-gradient-to-b from-[#F8FAFC] to-white overflow-hidden">
+    <div className="relative py-24 bg-gradient-to-b from-teal-50 to-sky-50 overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#61bece]/10 blur-3xl"></div>
         <div className="absolute -left-20 -bottom-20 w-96 h-96 rounded-full bg-[#8a2be2]/10 blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-11/12 md:w-11/12 lg:w-11/12 xl:container mx-auto relative z-10">
         {/* Header Section */}
         <motion.div
           className="text-center mb-20"

@@ -1,10 +1,13 @@
 "use client";
+'use client'
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
+  
   const { data: session, status } = useSession();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,6 +19,9 @@ const Nav = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const pathname = usePathname();
+  if (pathname.startsWith("/auth")) return null;
 
   if (status === "loading") {
     return (
@@ -42,6 +48,8 @@ const Nav = () => {
     { name: "FIND DOCTOR", href: "/find-doctor" },
     { name: "BLOGS", href: "/blogs" },
   ];
+
+  
 
   return (
     <>

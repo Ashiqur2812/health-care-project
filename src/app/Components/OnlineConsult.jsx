@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const OnlineConsult = () => {
     return (
         <div className="mx-auto max-w-7xl px-4">
@@ -6,11 +8,13 @@ const OnlineConsult = () => {
 
                 {/* Image Section */}
                 <div className="w-full md:w-1/3 flex justify-center">
-                    <img 
-                        src="https://i.ibb.co/ZRKbffQB/7915233-3784074.jpg" 
+                    <Image src="https://i.ibb.co/ZRKbffQB/7915233-3784074.jpg"
                         alt="Consultation"
-                        className="w-full  lg:max-w-md rounded-lg shadow-lg"
-                    />
+                        width={300}
+                        height={400}
+                        className="w-full lg:max-w-md rounded-lg shadow-lg"
+                    >
+                    </Image>
                 </div>
 
                 <div className="w-full md:w-2/3 flex flex-col items-center justify-center">
