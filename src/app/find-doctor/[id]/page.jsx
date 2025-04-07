@@ -61,7 +61,7 @@ const DoctorDetails = ({ params }) => {
 
     if (isLoading) {
         return (
-            <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex items-center justify-center">
+            <div className="min-h-screen bg-gradient-to-b from-sky-50 to-teal-50 flex items-center justify-center">
                 <motion.div
                     animate={{
                         rotate: 360,
@@ -79,7 +79,7 @@ const DoctorDetails = ({ params }) => {
 
     if (!doctor) {
         return (
-            <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white flex items-center justify-center">
+            <div className="min-h-screen bg-gradient-to-b from-teal-50 to-sky-50 flex items-center justify-center">
                 <div className="text-center">
                     <h2 className="text-2xl font-bold text-gray-800 mb-2">Doctor Not Found</h2>
                     <p className="text-gray-600 mb-6">The requested doctor profile could not be loaded.</p>
@@ -95,7 +95,7 @@ const DoctorDetails = ({ params }) => {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white w-11/12 mx-auto">
+        <div className="min-h-screen bg-gradient-to-b from-teal-50 to-sky-50">
             {/* Floating background particles */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
                 {[...Array(20)].map((_, i) => (
@@ -143,7 +143,7 @@ const DoctorDetails = ({ params }) => {
                 <span className="font-medium text-teal-600">Back</span>
             </motion.button>
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
+            <div className="w-11/12 md:w-11/12 lg:w-11/12 xl:container mx-auto py-20 relative">
                 {/* Doctor Profile Header */}
                 <motion.div
                     className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-white/20 mb-10"

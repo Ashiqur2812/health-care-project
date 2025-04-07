@@ -23,8 +23,8 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-teal-50 to-sky-50 py-20 overflow-hidden w-11/12 md:w-11/12 lg:w-11/12 xl:container mx-auto">
-      <div className="container mx-auto px-6 lg:px-8">
+    <section className="bg-gradient-to-br from-teal-50 to-sky-50 py-20 overflow-hidden ">
+      <div className="w-11/12 md:w-11/12 lg:w-11/12 xl:container mx-auto">
         <motion.div 
           ref={constraintsRef}
           initial={{ opacity: 0, y: 20 }}

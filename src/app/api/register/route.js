@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import connectMongodb from "../../../../lib/mongodb";
 import newUser from "../../../../model/newUser";
 import bcrypt from "bcryptjs";
+import { connectToDatabase } from "/lib/mongodb";
 
 export async function POST(request) {
   try {
     // Connect to MongoDB
-    await connectMongodb();
+    await connectToDatabase();
     
     // Parse the request body safely
     const body = await request.json();
