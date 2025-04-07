@@ -27,7 +27,7 @@ const DoctorDetails = ({ params }) => {
         const fetchData = async () => {
             try {
                 setIsLoading(true);
-                const res = await fetch(`http://localhost:3000/api/doctors/${params.id}`);
+                const res = await fetch(`/api/doctors/${params.id}`);
                 const data = await res.json();
                 setDoctor(data);
                 console.log(data)

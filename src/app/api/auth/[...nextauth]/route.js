@@ -13,7 +13,7 @@ const handler = NextAuth({
             },
             async authorize(credentials, req) {
                 try {
-                    const res = await fetch("http://localhost:3000/auth/login", {
+                    const res = await fetch("/auth/login", {
                         method: 'POST',
                         body: JSON.stringify(credentials),
                         headers: { "Content-Type": "application/json" }

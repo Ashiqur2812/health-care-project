@@ -32,7 +32,7 @@ const AddDoctors = () => {
       day: doctor.day,
       hour: doctor.hour,
     };
-    const response = await fetch("http://localhost:3000/api/doctors/post", {
+    const response = await fetch("/api/doctors/post", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
