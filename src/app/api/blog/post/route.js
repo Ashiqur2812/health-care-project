@@ -1,6 +1,5 @@
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 import { NextResponse } from "next/server";
-
 import { BlogModel } from "/model/blogModel/blogModel";
 // import { connectMongodb } from "/lib/mongodb";
 import { connectToDatabase } from "/lib/mongodb";
