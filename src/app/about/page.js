@@ -16,4 +16,3 @@ const page = () => {
 export default page;
 
 // this is my commit
-// this is my second commit
