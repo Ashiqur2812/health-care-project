@@ -7,7 +7,6 @@ const page = () => {
     return (
         <div>
             <Activity/>
-// Activity
             <Numeric/>
             <Expert/>
         </div>
